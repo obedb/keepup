@@ -1,0 +1,5 @@
+<h3>Here is the post you created.</h3>
+<p><%= @post.title %></p>
+<p><%= @post.description %></p>
+<%= button_to "edit post", "/posts/#{@post.id}/edit", method: :get %>
+<%= button_to "delete post", "/posts/#{@post.id}", method: :delete %>

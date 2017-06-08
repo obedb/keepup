@@ -1,0 +1,29 @@
+<div class="container" >
+    <div class="col-md-6" >
+        <div id="logbox"  >
+            <%= form_tag '/users', method: :post do  %>
+                <h1>Create an Account</h1>
+                <input name="first_name" type="text" placeholder="First Name" class="input pass"/>
+                <input name="last_name" type="text" placeholder="Last Name" class="input pass"/>
+                <input name="email" type="email" placeholder="Email address" class="input pass"/>
+                <input name="password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+                <input name="password_confirmation" type="password" placeholder="Confirm password" required="required" class="input pass"/>
+                <div class="form-group">
+                  Role: 
+                    <select name="role_id">
+                      <option value="" disabled selected>Select your option</option>
+                      <% @roles.each do |role| %>
+                        <option value="<%= role.id %>">
+                        <%= role.name %></option>
+                      <% end %>     
+                    </select>     
+                </div>
+                <input type="submit" value="Sign me up!" class="inputButton"/>
+            <% end %>
+        </div>
+    </div>
+    <!--col-md-6-->
+
+
+</div>
+</div>

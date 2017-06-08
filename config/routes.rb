@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get "/posts/:id/edit", to: 'posts#edit'
   patch "/posts/:id", to: 'posts#update'
   delete "/posts/:id", to: 'posts#destroy'
+
+  get "/comments/new", to: 'comments#new'
+  post "/comments", to: 'comments#create'
+  delete "/comments/:id", to: 'comments#destroy'
+
+
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"

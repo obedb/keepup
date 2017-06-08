@@ -1,5 +1,23 @@
-<h3>Here is the post you created.</h3>
+<h2>Here is the post you created.</h2>
 <p><%= @post.title %></p>
 <p><%= @post.description %></p>
+
+<h2>Comments</h2>
+
+<div>
+<%= @post.comments.each do |comment| %>
+<%= comment.description %>
+<% end -%>
+</div>
+
+<div>
+  <%= form_tag "/comments", method: :post do %>
+  <input type="text" name="description" placeholder="Type your comment">
+  <button type="submit">Comment</button>
+  <% end %>
+</div>
+
+
 <%= button_to "edit post", "/posts/#{@post.id}/edit", method: :get %>
 <%= button_to "delete post", "/posts/#{@post.id}", method: :delete %>
+

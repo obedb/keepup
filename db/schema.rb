@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170606171644) do
 
+ActiveRecord::Schema.define(version: 20170608161122) do
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,12 +54,13 @@ ActiveRecord::Schema.define(version: 20170606171644) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
     t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "role_id"
     t.string   "password_digest"
+    t.string   "last_name"
   end
 
 end

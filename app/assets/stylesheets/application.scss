@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-image: url(wallpaper2.jpg);
+ }
+footer{
+  /*position: fixed;*/
+  height: 90px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: white;
+  text-align: center;
+}
+footer.copyright {
+  padding-bottom: 50px;
+}

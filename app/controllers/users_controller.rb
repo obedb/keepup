@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id  #ask clarification about it
       flash[:success] = 'Successfully created Account'
-      redirect_to '/'
+      redirect_to '/home'
     else
       flash[:warning] = 'Invalid email or password'
       redirect_to '/signup'

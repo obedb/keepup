@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/home", to: 'posts#home'
+  get "/contact", to: 'posts#contact'
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
   get "/posts/:id", to: 'posts#show'

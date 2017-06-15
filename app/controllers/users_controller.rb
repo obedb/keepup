@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   def new
       @user = User.new
       @roles = Role.where.not(name:"admin")

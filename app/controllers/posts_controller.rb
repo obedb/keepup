@@ -13,6 +13,9 @@ class PostsController < ApplicationController
     
   end
 
+  def new
+  end
+
   def create
     @post = Post.create({title: params[:title], description: params[:description], user_id: params[:user_id]})
     @post.save

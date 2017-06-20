@@ -11,6 +11,17 @@ Rails.application.routes.draw do
   patch "/posts/:id", to: 'posts#update'
   delete "/posts/:id", to: 'posts#destroy'
 
+
+  get "/chat", to: 'chats#index'
+
+    resources :conversations, only: [:create] do 
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end 
+
+
   get "/comments/new", to: 'comments#new'
   post "/comments", to: 'comments#create'
   delete "/comments/:id", to: 'comments#destroy'
@@ -19,6 +30,8 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
+
+  
 
   get "/signup" => "users#new" 
   post "/users" => "users#create"

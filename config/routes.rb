@@ -12,15 +12,21 @@ Rails.application.routes.draw do
   delete "/posts/:id", to: 'posts#destroy'
 
 
-  get "/chat", to: 'chats#index'
+ devise_for :users
 
-    resources :conversations, only: [:create] do 
-    member do
-      post :close
+  authenticated :user do
+    root 'users#index'
+  end
+
+  unauthenticated :user do
+    devise_scope :user do
+      get "/" => "devise/sessions#new"
     end
-    resources :messages, only: [:create]
-  end 
+  end
 
+  resources :conversations do
+    resources :messages
+  end
 
   get "/comments/new", to: 'comments#new'
   post "/comments", to: 'comments#create'

@@ -1,21 +1,4 @@
 
-<!-- <div class="container">
-  <div class="col-md-6">
-      <div id="logbox">
-        <%= form_tag "/login", method: :post do %>
-          <h1>account login</h1>
-          <input name="email" type="email" placeholder="enter your email" class="input pass"/>
-          <input name="password" type="password" placeholder="enter your password" required="required" class="input pass"/>
-          <input type="submit" value="Sign me in!" class="inputButton"/>
-          <div class="text-center"">
-            Don't already have an account?<a href="/signup" id=""> create an account</a> 
-          </div>
-        <% end %>
-      </div>
-  </div>
-</div> -->
-
-
         <%= form_tag "/login", method: :post do %>
       <div class="container">
         <div class="card card-container">
@@ -24,14 +7,13 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
+                        <input type="checkbox" value="remember-me"> Remember me</label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="login">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="login">login</button>
             </form><!-- /form -->
             <a href="#" class="forgot-password">
               Forgot the password?

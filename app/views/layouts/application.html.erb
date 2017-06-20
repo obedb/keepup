@@ -32,12 +32,6 @@
     <meta name="author" content="">
 
 
-
-    <% if current_user %> 
-    <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
-    <% end %>
-
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
   <%= csrf_meta_tags %>

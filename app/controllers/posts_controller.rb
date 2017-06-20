@@ -16,6 +16,9 @@ before_action :authenticate_staff!, only: [:new, :create, :edit, :update, :destr
     
   end
 
+  def new
+  end
+
   def create
     @post = Post.create({title: params[:title], description: params[:description], user_id: params[:user_id]})
     @post.save

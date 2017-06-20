@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get"/", to: 'posts#home'
   get "/home", to: 'posts#home'
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'

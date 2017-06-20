@@ -4,5 +4,14 @@
 </div>
 <div>Description <input type="text" name="description">
 </div>
+<div>
+  <label for="Category Name">Choose Category</label>
+    <select name="category_id">
+      <option selected="<%= @post.category_ids %>" disabled selected> Select Your Option</option>
+      <% @categories.each do |category| %>
+      <option id ="name" type = "text" name = "category_id" size = "30" value="<%=category.id%>"><%=category.name%></option>
+      <% end -%>
+    </select>
+</div>
 <div> <input type="submit" name="create"></div>
 <% end -%>

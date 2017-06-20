@@ -13,6 +13,12 @@ class PostsController < ApplicationController
     
   end
 
+  def new
+    @post = Post.new
+    @categories = Category.all 
+    
+  end
+
   def create
     @post = Post.create({title: params[:title], description: params[:description], user_id: params[:user_id]})
     @post.save

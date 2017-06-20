@@ -8,10 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Business Casual - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap Core CSS -->
+   <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -40,9 +37,11 @@
   <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
   </head>
 
   <body>
+
 
   <%= render 'layouts/nav' %>
 
@@ -50,7 +49,20 @@
     <%= yield %>
 </div>
 <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
-=======
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Script to Activate the Carousel -->
+  <script>
+  $('.carousel').carousel({
+      interval: 5000 //changes the speed
+  })
+  </script>
+
   <div class="brand">Keep Up Kepler</div>
     <div class="address-bar">Kepler Kigali | Kimironko, KG 11 Av 183 | (+250)783930839</div>
 
@@ -74,13 +86,13 @@
                       <a href="/home">Home</a>
                   </li>
                   <li>
-                      <a href="/">About</a>
+                      <a href="about.html">About</a>
                   </li>
                   <li>
                       <a href="blog.html">Blog</a>
                   </li>
                   <li>
-                      <a href="contact.html">Contact</a>
+                      <a href="/contacts">Contact</a>
                   </li>
               </ul>
 

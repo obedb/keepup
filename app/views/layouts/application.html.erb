@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Keepup</title>
     
@@ -8,10 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Business Casual - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap Core CSS -->
+   <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -28,13 +25,49 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%= csrf_meta_tags %>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <% if current_user %> 
+    <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+    <% end %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+  <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
   </head>
 
   <body>
+
+
+
+<div class="container">
+    <%= yield %>
+</div>
+<audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Script to Activate the Carousel -->
+  <script>
+  $('.carousel').carousel({
+      interval: 5000 //changes the speed
+  })
+  </script>
+
   <div class="brand">Keep Up Kepler</div>
     <div class="address-bar">Kepler Kigali | Kimironko, KG 11 Av 183 | (+250)783930839</div>
 
@@ -48,23 +81,35 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+             <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
               <a class="navbar-brand" href="index.html">Keep Up Kepler</a>
           </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
+          <!--Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                   <li>
-                      <a href="/home">Home</a>
+                      <a href="/posts">Home</a>
                   </li>
                   <li>
-                      <a href="/">About</a>
+                      <a href="">CfA</a>
                   </li>
                   <li>
-                      <a href="blog.html">Blog</a>
+                      <a href="">Academics</a>
                   </li>
                   <li>
-                      <a href="contact.html">Contact</a>
+                      <a href="">Clubs/Events</a>
+                  </li>
+                   <li>
+                      <a href="">Announcement</a>
+                  </li>
+                   <li>
+                      <a href="">Career</a>
+                  </li>
+                   <li>
+                      <a href="">Policies</a>
+                  </li>
+                   <li>
+                      <a href="">Staffs</a>
                   </li>
               </ul>
 
@@ -76,7 +121,7 @@
                 <% end %> 
               </ul>
           </div>
-          <!-- /.navbar-collapse -->
+          <!-- /.navbar-collapse
       </div>
       <!-- /.container -->
   </nav>
@@ -92,14 +137,6 @@
                    <p class="copyright"><strong>Copyright &copy; KeepUp Kepler 2017</strong> </p>
                    </div>
                    <div class="col-md-4">
-                   <!-- <strong><%= Time.now %></strong> -->
-                       <!-- <ul class="list-inline quicklinks">
-                           <li><a href="#">Privacy Policy</a>
-                           </li>
-                           <li><a href="#">Terms of Use</a>
-                           </li>
-                       </ul> -->
-                   </div>
                </div>
          </div>
        </footer>

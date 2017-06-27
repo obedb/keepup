@@ -3,7 +3,7 @@ before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destr
 before_action :authenticate_staff!, only: [:new, :create, :edit, :update, :destroy]
 
   def home
-    
+ 
   end
 
   def index

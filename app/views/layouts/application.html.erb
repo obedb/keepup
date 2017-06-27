@@ -42,8 +42,13 @@
 
   <body>
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> d210f5d10b73d89baa6acffba58709053e7179ee
 <div class="container">
-    <%= yield %>
+    
 </div>
 <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
 
@@ -103,14 +108,12 @@
                    <li>
                       <a href="">Staffs</a>
                   </li>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                <% if current_user != nil %>
+               <% if current_user != nil %>
                   <li><%= link_to "Logout", "/logout", method: :delete %></li>
                 <% else %>
                  <li><%= link_to "Login", "/login" %></li>
                 <% end %> 
+
               </ul>
           </div>
           <!-- /.navbar-collapse

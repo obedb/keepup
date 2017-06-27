@@ -49,7 +49,7 @@ group :development do
   gem 'spring'
   gem 'seed_dump'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'devise'
+  # gem 'devise'
   gem "private_pub"
   gem "thin"
 end

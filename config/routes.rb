@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
- 
+  get"/home", to: 'posts#home'
+  get "/index", to: 'posts#index'
+
   get "/contacts", to: 'posts#contacts'
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
   get "/posts/:id/edit", to: 'posts#edit'
   patch "/posts/:id", to: 'posts#update'
   delete "/posts/:id", to: 'posts#destroy'
-
 
 
   get "/comments/new", to: 'comments#new'

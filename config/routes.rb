@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get "/index", to: 'posts#index'
+  get "/home", to: 'posts#home'
+  get "/posts", to: 'posts#index'
 
-  get "/contacts", to: 'posts#contacts'
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
   get "/posts/:id", to: 'posts#show'

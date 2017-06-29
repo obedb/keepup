@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+     <h4> New Post </h4>      
+
+     <%= form_tag "/posts", method: :post do %>
+
+     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+       <form>
+         <div class="form-group">
+            <label for="focusedInput">Title</label>
+            <input type="text" class="form-control" name="title" id="focusedInput"  placeholder="Enter the title">
+          </div>
+
+
+          <div class="form-group">
+            <label>Post Description</label>
+            <textarea name="description"></textarea>
+              <script>
+                  CKEDITOR.replace( 'description' );
+              </script>
+          </div>
+        
+          <div class="checkbox">
+            <input type="submit" class="btn btn-primary active" value="Create Post">
+          </div>
+        </form>
+
+     <% end %>
+    </div>
+  </div>
+</div>

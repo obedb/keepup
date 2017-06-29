@@ -1,21 +1,13 @@
 Rails.application.routes.draw do
 
 
- 
-
-  get"/", to: 'posts#home'
-  get "/home", to: 'posts#home'
-
-
-  get"/home", to: 'posts#home'
+  get"/", to: 'posts#index'
   get "/index", to: 'posts#index'
 
 
   get "/index", to: 'posts#index'
 
   get "/contacts", to: 'posts#contacts'
-
-  get "/home", to: 'posts#home'
   get "/posts", to: 'posts#index'
 
   get "/chat", to: 'chats#index'

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get "/index", to: 'posts#index'
 
   get "/contacts", to: 'posts#contacts'
+
+  get "/home", to: 'posts#home'
+  get "/posts", to: 'posts#index'
+
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
   get "/posts/:id", to: 'posts#show'
@@ -25,8 +29,6 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
   delete "logout" => "sessions#destroy"
-
-  
 
   get "/signup" => "users#new" 
   post "/users" => "users#create"

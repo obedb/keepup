@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  
+  root "posts#index"
+
+
+
 
   get"/", to: 'posts#index'
   get "/index", to: 'posts#index'
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
   get "/index", to: 'posts#index'
 
   get "/contacts", to: 'posts#contacts'
+
   get "/posts", to: 'posts#index'
 
   get "/chat", to: 'chats#index'

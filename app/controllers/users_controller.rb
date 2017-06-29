@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
+# before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   def new
       @user = User.new
       @roles = Role.where.not(name:"admin")
@@ -18,7 +18,7 @@ before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destr
     if @user.save
       session[:user_id] = @user.id  #ask clarification about it
       flash[:success] = 'Successfully created Account'
-      redirect_to "/home"
+      redirect_to "/login"
     else
       flash[:warning] = 'Invalid email or password'
       redirect_to '/signup'

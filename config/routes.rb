@@ -15,6 +15,16 @@ Rails.application.routes.draw do
   get "/home", to: 'posts#home'
   get "/posts", to: 'posts#index'
 
+  get "/chat", to: 'chats#index'
+
+    resources :conversations, only: [:create] do 
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end 
+
+
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
   get "/posts/:id", to: 'posts#show'

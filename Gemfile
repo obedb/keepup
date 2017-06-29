@@ -50,8 +50,6 @@ group :development do
   gem 'seed_dump'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem "private_pub"
-  gem "thin"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

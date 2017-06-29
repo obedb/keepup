@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+
+  get"/home", to: 'posts#home'
+  get "/index", to: 'posts#index'
+
+
+  get "/index", to: 'posts#index'
+
+  get "/contacts", to: 'posts#contacts'
+
   get "/home", to: 'posts#home'
   get "/posts", to: 'posts#index'
 
@@ -19,8 +28,7 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
-  delete "/logout" => "sessions#destroy"
-
+  delete "logout" => "sessions#destroy"
 
   get "/signup" => "users#new" 
   post "/users" => "users#create"

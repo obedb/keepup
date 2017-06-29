@@ -49,10 +49,7 @@ group :development do
   gem 'spring'
   gem 'seed_dump'
   gem 'spring-watcher-listen', '~> 2.0.0'
-<<<<<<< HEAD
 
-=======
->>>>>>> d210f5d10b73d89baa6acffba58709053e7179ee
   gem "private_pub"
   gem "thin"
 end

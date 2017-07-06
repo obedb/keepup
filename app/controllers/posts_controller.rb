@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
-before_action :authenticate_staff!, only: [:new, :create, :edit, :update, :destroy]
+
 
 
   def home
@@ -10,12 +9,11 @@ before_action :authenticate_staff!, only: [:new, :create, :edit, :update, :destr
 
   def index
     @posts = Post.all
-    
   end
 
   def show
     @post = Post.find_by(id: params[:id])
-    
+  
   end
 
   def new

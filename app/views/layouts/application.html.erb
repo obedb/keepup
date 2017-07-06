@@ -42,11 +42,10 @@
 
   <body>
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> d210f5d10b73d89baa6acffba58709053e7179ee
+
+
 <div class="container">
     
 </div>
@@ -68,7 +67,7 @@
   <div class="brand">Keep Up Kepler</div>
     <div class="address-bar">Kepler Kigali | Kimironko, KG 11 Av 183 | (+250)783930839</div>
 
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="mynavbar navbar navbar-default" role="navigation">
       <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -88,9 +87,6 @@
                       <a href="/posts">Home</a>
                   </li>
                   <li>
-                      <a href="">CfA</a>
-                  </li>
-                  <li>
                       <a href="">Academics</a>
                   </li>
                   <li>
@@ -108,7 +104,7 @@
                    <li>
                       <a href="">Staffs</a>
                   </li>
-               <% if current_user != nil %>
+               <% if current_user %>
                   <li><%= link_to "Logout", "/logout", method: :delete %></li>
                 <% else %>
                  <li><%= link_to "Login", "/login" %></li>

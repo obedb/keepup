@@ -14,6 +14,58 @@
  *= require_self
  */
 
+
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+ body {
+  background-image: url(wallpaper2.jpg);
+ }
+footer{
+  /*position: fixed;*/
+  height: 90px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: white;
+  text-align: center;
+}
+footer.copyright {
+  padding-bottom: 50px;
+}
+
+
+
+
+
+
+.messages-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+ 
+ 
+.message-sent {
+  position: relative;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  margin: 5px 20px;
+  padding: 10px;
+  float: right;
+}
+ 
+ 
+.message-received {
+  background-color: #F1F0F0;
+  border-color: #EEEEEE;
+  margin: 5px 20px;
+  padding: 10px;
+  float: left;
+}
+
 footer.copyright {
   padding-bottom: 50px;
 }
@@ -235,3 +287,4 @@ footer p {
         clear: both;
     }
 }
+

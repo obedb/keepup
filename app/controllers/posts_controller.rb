@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+ before_action :authenticate_admin_staff!, only: [:new, :create, :destroy]
 
   def index
     @posts = Post.all
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find_by(id: params[:id])
     
+    
   end
 
   def update
@@ -34,9 +36,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by(id: params[:id])
-    @post.destroy
-    redirect_to "/posts"
+    
+      @post = Post.find_by(id: params[:id])
+      @post.destroy
+      redirect_to "/posts"
     
   end
 end

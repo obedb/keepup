@@ -9,21 +9,24 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authenticate_user!
-    redirect_to '/login' unless current_user
+    unless current_user
+      redirect_to '/login' 
+    end 
   end
+  
 
-  def authenticate_admin!
-    unless current_user && current_user.admin
+  def authenticate_admin_staff!
+    unless current_user && current_user.role.name == "staff" || current_user.role.name == "admin"
       flash[:danger] = "Access Denied"
       redirect_to "/"
     end
   end
 
-  def authenticate_staff!
-    unless current_user && current_user.staff
-      flash[:danger] = "Access Denied"
-      redirect_to "/"
-    end
-  end
+  # def authenticate_staff!
+  #   unless current_user && current_user.role.name == "staff"
+  #     flash[:danger] = "Access Denied"
+  #     redirect_to "/"
+  #   end
+  # end
 
 end

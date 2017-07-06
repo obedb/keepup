@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'posts#home'
+
+  root 'posts#index'
   get "/home", to: 'posts#home'
 
+  
+  root "posts#index"
 
-  get"/home", to: 'posts#home'
+
+
+
+
+  get"/", to: 'posts#index'
   get "/index", to: 'posts#index'
 
 
@@ -12,7 +19,6 @@ Rails.application.routes.draw do
 
   get "/contacts", to: 'posts#contacts'
 
-  get "/home", to: 'posts#home'
   get "/posts", to: 'posts#index'
 
   get "/chat", to: 'chats#index'

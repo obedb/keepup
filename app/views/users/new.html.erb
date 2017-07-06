@@ -1,29 +1,47 @@
-<div class="container" >
-    <div class="col-md-6" >
-        <div id="logbox"  >
-            <%= form_tag '/users', method: :post do  %>
-                <h1>Create an Account</h1>
-                <input name="first_name" type="text" placeholder="First Name" class="input pass"/>
-                <input name="last_name" type="text" placeholder="Last Name" class="input pass"/>
-                <input name="email" type="email" placeholder="Email address" class="input pass"/>
-                <input name="password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
-                <input name="password_confirmation" type="password" placeholder="Confirm password" required="required" class="input pass"/>
-                <div class="form-group">
-                  Role: 
-                    <select name="role_id">
-                      <option value="" disabled selected>Select your option</option>
+<style type="text/css">
+    .mynavbar {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+</style>
+
+<div class="container" style="">
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3 thumbnail">
+        <%= form_tag '/users', method: :post do  %>
+
+        <legend>Create Account</legend>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <input type="text" name="first_name" value="" class="form-control input-lg singup-input" placeholder="First Name ..."  /> </div>
+                <div class="col-xs-6 col-md-6">
+                    <input type="text" name="last_name" value="" class="form-control input-lg singup-input" placeholder="Last Name ..." /></div>
+                </div>
+                <br>
+                <div class="text-center">
+                <div class="form-group" >
+                  <select name="role_id" class="btn btn-lg  role-btn btn-signin">
+                      <option value="" disabled selected>Select your Role</option>
                       <% @roles.each do |role| %>
-                        <option value="<%= role.id %>">
+                      <option value="<%= role.id %>">
                         <%= role.name %></option>
-                      <% end %>     
+                        <% end %>     
                     </select>     
                 </div>
-                <input type="submit" value="signup" class="inputButton"/>
-            <% end %>
+                </div>
+                <input type="text" name="email" value="" class="form-control input-lg singup-input" placeholder="Your Email ..."  />
+                <br>
+                <div class="col-xs-6 col-md-6">
+                <input type="password" name="password" value="" class="form-control input-lg singup-input" placeholder="Password ..."  /></div>
+                <div class="col-xs-6 col-md-6">
+                <input type="password" name="confirm_password" value="" class="form-control input-lg singup-input" placeholder="Confirm Password ..."  />
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+                    Create account</button>
+                    <% end %>        
+                </div>
+            </div>            
         </div>
     </div>
-    <!--col-md-6-->
-
-
-</div>
-</div>

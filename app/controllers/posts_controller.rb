@@ -7,17 +7,21 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
-    wwwwwwww
   end
 
   def new
   end
 
   def create
-    @post = Post.create({title: params[:title], description: params[:description], user_id: params[:user_id]})
-    @post.save
-    redirect_to "/posts/#{@post.id}"
+    @post = Post.create({title: params[:title], description: params[:description], user_id: current_user.id})
+
+    if @post.save
+      redirect_to "/posts/#{@post.id}"
+    else
+      render :new
+    end
     
+
   end
 
   def edit

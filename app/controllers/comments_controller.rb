@@ -15,8 +15,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create({post_id: params[:post_id], description: params[:description], user_id: params[:user_id]})
+    @post = Post.find_by(id: params[:id])
+    @comment = Comment.create({post_id: params[:post_id], description: params[:description], user_id: current_user.id})
     @comment.save
+    redirect_to :back
     
   end
 

@@ -1,13 +1,6 @@
 User.create!([
+  {first_name: "Joseph", email: "joseph.mugwaneza2015@kepler.org", role_id: nil, password_digest: "$2a$10$deGc0MS2czgxD3KE22iXRumk4/liaX0sWXsqGaWAE5o0gNqR3zkcS", last_name: "Mugwaneza"},
   {first_name: "Karoli Kolokonyi", email: "karoli@kepler.org", role_id: 1, password_digest: "Kepler2017", last_name: nil},
-  {first_name: "Karoli", email: "karoli.kolokonyi@gmail.com", role_id: 2, password_digest: "Kepler2017", last_name: nil},
-  {first_name: "Obed", email: "obed@kepler.org", role_id: 3, password_digest: "Kampala", last_name: nil},
-  {first_name: "Simon", email: "simon@kepler.org", role_id: 2, password_digest: "$2a$10$ovBmNrSidzIVA4lRkVMxwujOFpuh4.JfO3nE/zlUD175Y5IiKWRTe", last_name: "Niyomugenzi"},
-  {first_name: "jeanmonet", email: "jeanmonet@kepler.org", role_id: 2, password_digest: "$2a$10$V5BC.fPBeflDsPdLQltiKuMLpfvLjTFjINSCrTxrEFyUVRfXgJJqe", last_name: "Ngenzi"},
-  {first_name: "jeanmonet", email: "jeanmonet@kepler.org", role_id: 2, password_digest: "$2a$10$Yri0Y5JlZH/bDkRCRC.Xq.qfmpjfjWt06bxRq65szJJK4xOFseOnK", last_name: "Ngenzi"}
-])
-Role.create!([
-  {name: "admin"},
-  {name: "staff"},
-  {name: "students"}
+  {first_name: "Karoli Kolokonyi", email: "karoli@kepler.org", role_id: 1, password_digest: "Kepler2017", last_name: nil},
+  {first_name: "Karoli Kolokonyi", email: "karoli@kepler.org", role_id: 1, password_digest: "Kepler2017", last_name: nil}
 ])

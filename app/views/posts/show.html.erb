@@ -11,16 +11,14 @@
 
        <h5 class="text-center">Comments</h5>
        <div>
-        <%= @post.comments.each do |comment| %>
+        <% @post.comments.each do |comment| %>
         <%= comment.description %>
+        <%= link_to "Edit", comment_path, method: :patch %>
+        <%= link_to "Delete", comment_path, method: :delete %>
         <% end %>
       </div>
       <div>
-        <%= form_tag "/comments", method: :post do %>
-        <input type="text" name="description" placeholder="Type your comment">
-
-        <button type="submit">Comment</button>
-        <% end %>
+       <%= render "comments/form" %>
       </div>
 
       <%= button_to "edit post", "/posts/#{@post.id}/edit", method: :get %>
@@ -28,9 +26,6 @@
     </div>
   </div>
 </div>
-
-
-
 </div>
 </div>
 

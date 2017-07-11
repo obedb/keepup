@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
       @user = User.new
-      @roles = Role.where.not(name:"admin")
+      @roles = Role.all
 
   end 
 

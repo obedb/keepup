@@ -13,8 +13,11 @@
        <div>
         <% @post.comments.each do |comment| %>
         <%= comment.description %>
-        <%= link_to "Edit", comment_path, method: :patch %>
-        <%= link_to "Delete", comment_path, method: :delete %>
+        <% if current_user && comment.user.id == current_user.id %>
+          <%= link_to "Edit", comment_path, method: :patch %>
+          <%= link_to "Delete", comment_path, method: :delete %>
+        <% end %>
+        <br>
         <% end %>
       </div>
       <div>

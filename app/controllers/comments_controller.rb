@@ -21,11 +21,14 @@ class CommentsController < ApplicationController
     find_comment
     if @comment.update(comment_params)
       flash[:sucess] = "Comment Updated"
+      redirect_to :back
     end
   end
-  def destory
-    if find_comment.destroy
-      flash[:warnning] = "Comment Deleted"
+  def destroy
+    find_comment
+    if @comment.destroy
+      flash[:warning] = "comment Deleted"
+      redirect_to :back
     end
   end
 

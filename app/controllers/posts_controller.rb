@@ -2,7 +2,11 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    if params[:sort]
+      @posts = Category.find_by(id: params[:sort].to_i).posts
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -14,9 +18,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create({title: params[:title], description: params[:description], user_id: params[:user_id]})
-    @post.save
-    redirect_to "/posts/#{@post.id}"
+    @post = current_user.posts.build(post_params)
+    
+    if @post.save
+      flash[:sucess] = "Post Created"
+      redirect_to "/posts/#{@post.id}"
+    else
+      render :new
+    end
     
   end
 
@@ -38,6 +47,11 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to "/posts"
     
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :description, :user_id, category_tokens: [])
   end
 end
 

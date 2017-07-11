@@ -86,18 +86,12 @@
                   <li>
                       <a href="/posts">Home</a>
                   </li>
-                  <li>
-                      <a href="">Academics</a>
-                  </li>
-                  <li>
-                      <a href="">Clubs/Events</a>
-                  </li>
-                   <li>
-                      <a href="">Announcement</a>
-                  </li>
-                   <li>
-                      <a href="">Career</a>
-                  </li>
+                  <% Category.all.each do |category| %>
+                    <li>
+                      <a href="/posts?sort=<%=category.id%>"><%=category.name %></a>
+                    </li>
+                  <% end %>
+
                    <li>
                       <a href="">Policies</a>
                   </li>

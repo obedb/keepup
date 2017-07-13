@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   get "/contacts", to: 'posts#contacts'
 
-  get "/posts", to: 'posts#index'
 
   get "/chat", to: 'chats#index'
 
@@ -34,7 +33,7 @@ Rails.application.routes.draw do
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
   get "/posts/:id", to: 'posts#show'
-  post "/posts", to: 'posts#create'
+  post "/posts/new", to: 'posts#create'
   get "/posts/:id/edit", to: 'posts#edit'
   patch "/posts/:id", to: 'posts#update'
   delete "/posts/:id", to: 'posts#destroy'

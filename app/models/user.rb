@@ -1,10 +1,9 @@
 class User < ApplicationRecord
-
- 
  has_many :messages
  has_many :conversations, foreign_key: :sender_id
 
  belongs_to :role
+ has_many :posts
 
 
 

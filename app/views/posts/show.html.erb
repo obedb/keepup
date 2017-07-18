@@ -6,26 +6,25 @@
       <h2 class="intro-text text-center"><%= @post.title %></h2>
       <div class="col-md-2"></div>
       <div class="col-md-8">
-       <p style="text-align: justify;"><%= @post.description %></p>
+       <p style="text-align: justify;"><%= @post.description.html_safe %></p>
+       <div class="post-button"><br>
+          <%= button_to "edit post", "/posts/#{@post.id}/edit", method: :get %>
+          <%= button_to "delete post", "/posts/#{@post.id}", method: :delete %>
+       </div>
        <hr>
 
-       <h5 class="text-center">Comments</h5>
-       <div>
-        <% @post.comments.each do |comment| %>
-        <%= comment.description %>
-        <% if current_user && comment.user.id == current_user.id %>
-          <%= link_to "Edit", comment_path, method: :patch %>
-          <%= link_to "Delete", comment_path, method: :delete %>
-        <% end %>
-        <br>
-        <% end %>
-      </div>
-      <div>
-       <%= render "comments/form" %>
-      </div>
+        <div id="comments">
+          <% if @post.comments.empty? %>
+            <p style="font-weight: bold; font-style: italic; font-size: 12px;"> <%=@post.comments.count %> comment yet! So, be the first to comment on this post!</p>
+           <% else %>
+              <h3><%= @post.comments.count%> comments</h3>
+              <%= render @post.comments %>
+            <% end %>
 
-      <%= button_to "edit post", "/posts/#{@post.id}/edit", method: :get %>
-      <%= button_to "delete post", "/posts/#{@post.id}", method: :delete %>
+            <h3>Add a comment:</h3>
+            <%= render "comments/form" %>
+            </div>
+
     </div>
   </div>
 </div>

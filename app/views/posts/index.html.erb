@@ -60,7 +60,7 @@
                     <strong><%= link_to post.title, "/posts/#{post.id}" %></strong>
                 </h2>
         
-                <p><%= post.description %></p>
+                <p><%= post.description.html_safe %></p>
             </div>
         </div>
       <% end %>

@@ -1,34 +1,28 @@
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <div class="jumbotron">
   <div class="container">
   <div class="row">
-    <div class="col-md-6">
-
+    <div class="col-md-12">
+    
      <h4> New Post </h4>      
 
      <%= form_for :post , url: posts_new_path do |f|%>
-
-       <form>
-         <div class="form-group">
-            <label for="focusedInput">Title</label>
-            <%= f.text_field :title, type:"text", class: "form_control", id: "focusedInput", placeholder: "Title" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :Description, class: "focusedInput" %>
-            <%=f.text_area :description, class: "form-control", id:"focusedInput", placeholder:"Description..."%>
-          </div>
-          <div class="checkbox">
-          <% Category.all.each do |category| %>
-            <label>
+      <%= f.label :Title %><br>
+      <%= f.text_field :title %><br>
+      <%= f.label :Body_of_Post%>
+      <%= f.cktext_area :description %>
+      
+      <div class="checkbox">
+        <% Category.all.each do |category| %><br>
+          <label>
             <%= category.name%>:<%= check_box_tag "post[category_tokens][]", category.id%>
-            </label>
-          <% end %>
-          </div>
+          </label>
+        <% end %>
+      </div>
 
-          <div class="checkbox">
-            <%= f.submit class: "btn btn-primary active" %>
-          </div>
-        </form>
+      <div class="checkbox">
+        <%= f.submit class: "btn btn-primary active" %>
+      </div>
 
      <% end %>
     </div>

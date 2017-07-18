@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  get"/home", to: 'posts#home'
+  get "/index", to: 'posts#index'
 
+  get "/index", to: 'posts#index'
   root 'posts#index'
   get "/home", to: 'posts#home'
 
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
 
 
   get "/index", to: 'posts#index'
+
 
   get "/contacts", to: 'posts#contacts'
 

@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
  before_action :authenticate_admin_staff!, only: [:new, :create, :destroy]
 
+
+  def home
+ 
+  end
+
+
   def index
     if params[:sort]
       @posts = Category.find_by(id: params[:sort].to_i).posts

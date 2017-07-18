@@ -5,21 +5,28 @@
 
      <h4> New Post </h4>      
 
-     <%= form_tag "/posts", method: :post do %>
+     <%= form_for :post , url: posts_new_path do |f|%>
 
        <form>
          <div class="form-group">
             <label for="focusedInput">Title</label>
-            <input type="text" class="form-control" name="title" id="focusedInput"  placeholder="Enter the title">
+            <%= f.text_field :title, type:"text", class: "form_control", id: "focusedInput", placeholder: "Title" %>
           </div>
 
           <div class="form-group">
-            <label for="focusedInput">Post Description</label>
-            <textarea type="text" class="form-control" name="description" id="focusedInput"  placeholder="Enter the description"></textarea>
+            <%= f.label :Description, class: "focusedInput" %>
+            <%=f.text_area :description, class: "form-control", id:"focusedInput", placeholder:"Description..."%>
+          </div>
+          <div class="checkbox">
+          <% Category.all.each do |category| %>
+            <label>
+            <%= category.name%>:<%= check_box_tag "post[category_tokens][]", category.id%>
+            </label>
+          <% end %>
           </div>
 
           <div class="checkbox">
-            <input type="submit" class="btn btn-primary active" value="Create Post">
+            <%= f.submit class: "btn btn-primary active" %>
           </div>
         </form>
 
@@ -28,3 +35,5 @@
   </div>
   </div>
 </div>
+
+

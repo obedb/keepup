@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-
   get"/home", to: 'posts#home'
   get "/index", to: 'posts#index'
 
   get "/index", to: 'posts#index'
+  root 'posts#index'
+  get "/home", to: 'posts#home'
 
   
   root "posts#index"
+
 
 
 
@@ -21,7 +23,6 @@ Rails.application.routes.draw do
 
   get "/contacts", to: 'posts#contacts'
 
-  get "/posts", to: 'posts#index'
 
   get "/chat", to: 'chats#index'
 
@@ -36,15 +37,12 @@ Rails.application.routes.draw do
   get "/posts", to: 'posts#index'
   get "/posts/new", to: 'posts#new'
   get "/posts/:id", to: 'posts#show'
-  post "/posts", to: 'posts#create'
+  post "/posts/new", to: 'posts#create'
   get "/posts/:id/edit", to: 'posts#edit'
   patch "/posts/:id", to: 'posts#update'
   delete "/posts/:id", to: 'posts#destroy'
 
-  get "/comments/new", to: 'comments#new'
-  post "/comments", to: 'comments#create'
-  delete "/comments/:id", to: 'comments#destroy'
-
+  resources :comments
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"

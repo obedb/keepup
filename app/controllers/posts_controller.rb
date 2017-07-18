@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
- before_action :authenticate_admin_staff!, only: [:new, :create, :destroy]
+ # before_action :authenticate_admin_staff!, only: [:new, :create, :destroy]
 
   def index
     if params[:sort]

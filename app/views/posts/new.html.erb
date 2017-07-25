@@ -6,7 +6,9 @@
     
      <h4> New Post </h4>      
 
+
      <%= form_for :post , url: posts_path do |f|%>
+
       <%= f.label :Title %><br>
       <%= f.text_field :title %><br>
       <%= f.label :Body_of_Post%>

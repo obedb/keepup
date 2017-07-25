@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.post_id = params[:post_id]
-    
-    if @comment.save
-      flash[:sucess] = "Comment Posted"
-      redirect_to :back
+    @comment = current_user.comments.build(comment_params)
+    @comment.save
+
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
     end
   end
 

@@ -7,11 +7,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(comment_params)
-   if  @comment.save 
-    flash[:sucess] = "Comment Posted"
-    redirect_to :back
-   end
+    @comment = Comment.new(comment_params)
+    @comment.post_id = params[:post_id]
+    
+    if @comment.save
+      flash[:sucess] = "Comment Posted"
+      redirect_to :back
+    end
   end
 
   def edit
@@ -25,11 +27,11 @@ class CommentsController < ApplicationController
     end
   end
   def destroy
-    find_comment
-    if @comment.destroy
-      flash[:warning] = "comment Deleted"
-      redirect_to :back
-    end
+    @post = Post.find_by(id: params[:post_id])
+    @comment = @post.comments.find_by(id: params[:id])
+    @comment.destroy
+
+    redirect_to :back
   end
 
   private

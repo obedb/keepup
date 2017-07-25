@@ -50,7 +50,15 @@ group :development do
   gem 'seed_dump'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+
+  gem "private_pub"
+  gem "thin"
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#addition gems
+gem 'ckeditor', '~> 4.2', '>= 4.2.4'
+gem 'carrierwave', '~> 1.1'

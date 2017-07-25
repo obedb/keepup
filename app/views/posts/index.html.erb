@@ -19,13 +19,13 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="img-responsive img-full" src="https://static.wixstatic.com/media/e6b437_34135dbd82804d9797f7f8979fcc2815~mv2.jpg/v1/fill/w_1380,h_398,al_c,q_85,usm_0.66_1.00_0.01/e6b437_34135dbd82804d9797f7f8979fcc2815~mv2.webp" alt="">
+                            <img class="image" src="https://pbs.twimg.com/media/C6Z_We1WYAE5v6b.jpg" alt="" >
                         </div>
                         <div class="item">
-                            <img class="img-responsive img-full" src="https://www.dove.rw/wp-content/uploads/2017/04/IMG_9891.jpg" alt="">
+                            <img class="image" src="https://www.dove.rw/wp-content/uploads/2017/04/IMG_9891.jpg" alt="" >
                         </div>
                         <div class="item">
-                            <img class="img-responsive img-full" src="https://yellow.place/file/image/cover/0/0/87/xkiaovtmeiywtmuz.jpg" alt="">
+                            <img class="image" src="https://yellow.place/file/image/cover/0/0/87/xkiaovtmeiywtmuz.jpg" alt="" >
                         </div>
                     </div>
 
@@ -60,7 +60,7 @@
                     <strong><%= link_to post.title, "/posts/#{post.id}" %></strong>
                 </h2>
         
-                <p><%= post.description %></p>
+                <p><%= post.description.html_safe %></p>
             </div>
         </div>
       <% end %>

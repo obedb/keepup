@@ -1,21 +1,14 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
 
 
   root 'posts#index'
   get "/home", to: 'posts#home'
 
-  
-  root "posts#index"
+  resources :posts do 
+    resources :comments
+  end
 
-
-
-
-
-  get"/", to: 'posts#index'
-  get "/index", to: 'posts#index'
-
-
-  get "/index", to: 'posts#index'
 
   get "/contacts", to: 'posts#contacts'
 
@@ -28,17 +21,6 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [:create]
   end 
-
-
-  get "/posts", to: 'posts#index'
-  get "/posts/new", to: 'posts#new'
-  get "/posts/:id", to: 'posts#show'
-  post "/posts/new", to: 'posts#create'
-  get "/posts/:id/edit", to: 'posts#edit'
-  patch "/posts/:id", to: 'posts#update'
-  delete "/posts/:id", to: 'posts#destroy'
-
-  resources :comments
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"

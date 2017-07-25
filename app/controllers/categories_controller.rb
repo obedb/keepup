@@ -1,4 +1,9 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :authenticate_staff!, only: [:new, :create, :edit, :update, :destroy]
+  def index
+    @category = Category.where("name like?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.html
+      format.json { render :json => @category.map(&:attributes)}
+    end
+  end
 end

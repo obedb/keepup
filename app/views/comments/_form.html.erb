@@ -1,13 +1,9 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
+<%= form_for([@post, @post.comments.build], remote: true) do |f| %>
   <p>
     <%= f.label :comment %><br>
     <%= f.text_area :description, style: "width: 30%;"%>
   </p>
-
-  <p>
-    <%= f.hidden_field :post_id, value: @post.id %><br>
-    <%= f.hidden_field :user_id, value: current_user.id%>
-  </p>
+  <%= f.hidden_field :post_id, {:value => @post.id} %>
   <br>
   <p>
     <%= f.submit %>

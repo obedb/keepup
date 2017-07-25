@@ -13,13 +13,11 @@
       <%= f.cktext_area :description %>
       
       <div class="checkbox">
-        <% Category.all.each do |category| %><br>
-          <label>
-            <%= category.name%>:<%= check_box_tag "post[category_tokens][]", category.id%>
-          </label>
-        <% end %>
+         <div>
+            <%= f.label :category_ids, "Slect Post Category" %><br>
+            <%= f.collection_select :category_tokens, Category.order(:name), :id, :name, {}, {multiple: true, class: "chosen-select", id:"post_category_tokens"} %>
+          </div>
       </div>
-
       <div class="checkbox">
         <%= f.submit class: "btn btn-primary active" %>
       </div>

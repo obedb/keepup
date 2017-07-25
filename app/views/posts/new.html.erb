@@ -6,20 +6,20 @@
     
      <h4> New Post </h4>      
 
-     <%= form_for :post , url: posts_new_path do |f|%>
+
+     <%= form_for :post , url: posts_path do |f|%>
+
       <%= f.label :Title %><br>
       <%= f.text_field :title %><br>
       <%= f.label :Body_of_Post%>
       <%= f.cktext_area :description %>
       
       <div class="checkbox">
-        <% Category.all.each do |category| %><br>
-          <label>
-            <%= category.name%>:<%= check_box_tag "post[category_tokens][]", category.id%>
-          </label>
-        <% end %>
+         <div>
+            <%= f.label :category_ids, "Slect Post Category" %><br>
+            <%= f.collection_select :category_tokens, Category.order(:name), :id, :name, {}, {multiple: true, class: "chosen-select", id:"post_category_tokens"} %>
+          </div>
       </div>
-
       <div class="checkbox">
         <%= f.submit class: "btn btn-primary active" %>
       </div>

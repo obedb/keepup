@@ -4,8 +4,7 @@
     <div class="col-md-12">
       <hr>
       <h2 class="intro-text text-center"><%= @post.title %></h2>
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+      <div class="col-md-8 col-md-offset-2">
        <p style="text-align: justify;"><%= @post.description.html_safe %></p>
        <div class="post-button"><br>
           <%= button_to "edit post", "/posts/#{@post.id}/edit", method: :get %>

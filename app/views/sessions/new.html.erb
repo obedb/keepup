@@ -7,27 +7,29 @@
     }
 </style>
 
-        <%= form_tag "/login", method: :post do %>
-      <div class="container">
-        <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me</label>
+<%= form_tag "/login", method: :post do %>
+<div class="container">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div id="remember" class="checkbox">
+
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me</label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="login">login</button>
+                
             </form><!-- /form -->
             <a href="#" class="forgot-password">
               Forgot the password?
-            </a>
-            <div class="text-center"">
+          </a>
+          <div class="text-center"">
               Create Account?<a href="/signup"> Sign Up</a> 
-            </div>
-            <% end %>
-        </div><!-- /card-container -->
-    </div><!-- /container -->
+          </div>
+      </div><!-- /card-container -->
+  </div><!-- /container -->
+  <% end %>
